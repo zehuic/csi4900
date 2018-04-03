@@ -106,14 +106,15 @@
                 };
                 updateUserOptions()
             });
-		var loader_walt = new THREE.OBJLoader();
-            loader_walt.load( 'threejs/tongue01.obj', function ( object ) {
-                modelLibrary.push({type: 'Tongue', args: [ ], meshScale:5});
+		var loader_tongue = new THREE.OBJLoader(manager);
+			loader_tongue.load('threejs/tongue01.obj', function (object, materials) {
+				modelLibrary.push({type: 'Tongue', args: [ ], scale: 100, meshScale:1.5 });
                 THREE.Tongue = function() {
                     return geometry.clone();
                 };
                 updateUserOptions()
-            });
+			    
+			});
 
 
 
