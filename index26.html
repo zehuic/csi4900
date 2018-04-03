@@ -106,7 +106,7 @@
                 };
                 updateUserOptions()
             });
-		var loader = new THREE.OBJLoader(manager);
+		var loader = new THREE.OBJLoader();
 			loader.load('threejs/tongue01.obj', function (object, materials) {
 			    man = object;
 			    man.traverse(function (child) {
