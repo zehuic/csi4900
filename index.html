@@ -108,7 +108,7 @@
             });
 		var loader_walt = new THREE.JSONLoader();
             loader_walt.load( 'threejs/Tongue.js', function ( geometry ) {
-                modelLibrary.push({type: 'Tongue', args: [ ], scale: 100, meshScale:1.5});
+                modelLibrary.push({type: 'Tongue', args: [ ], scale: 1000, meshScale:5});
                 THREE.Tongue = function() {
                     return geometry.clone();
                 };
