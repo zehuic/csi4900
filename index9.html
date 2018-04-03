@@ -322,7 +322,7 @@
                 // Scale geometry.
                 if( model.scale )
                     orig_geom.scale( model.scale, model.scale, model.scale );
-
+		orig_geom.translateY(200);
                 // Cloning original geometry for debuging
                 smooth_geom = orig_geom.clone();
 
