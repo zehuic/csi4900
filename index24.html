@@ -106,20 +106,30 @@
                 };
                 updateUserOptions()
             });
-		var loader_tongue = new THREE.OBJLoader(manager);
-			loader_tongue.load('threejs/tongue01.obj', function (object, materials) {
-				modelLibrary.push({type: 'Tongue', args: [ ], scale: 100, meshScale:1.5 });
-                THREE.Tongue = function() {
-                    return geometry.clone();
-                };
-                updateUserOptions()
-			    
-			});
+		
 
 
 
             // start scene
             init();
+		var loader = new THREE.OBJLoader(manager);
+loader.load('threejs/tongue.obj', function (object, materials) {
+    console.log(object);
+    console.log(materials);
+    man = object;
+    man.traverse(function (child) {
+        if (child instanceof THREE.Mesh) {
+            child.geometry.computeFaceNormals();
+            child.geometry.computeVertexNormals( true );
+            child.material = new THREE.MeshPhongMaterial({
+                color: 'white',
+                shading: THREE.SmoothShading // <-----------  THIS IS THE PROBLEM
+            });
+        }
+    });
+    man.position.y = -10;
+    scene.add(man);
+});
             animate();
 
             function init()
