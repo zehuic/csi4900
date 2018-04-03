@@ -107,7 +107,7 @@
                 updateUserOptions()
             });
 	 var loader_tongue = new THREE.JSONLoader();
-            loader_tongue.load( 'threejs/Tongue10.js', function ( geometry ) {
+            loader_tongue.load( 'threejs/Tongue.js', function ( geometry ) {
                 modelLibrary.push({type: 'Tongue', args: [ ], meshScale:1.5 });
                 THREE.Tongue = function() {
                     return geometry.clone();
@@ -116,8 +116,8 @@
             } );
 
 	var loader_suzanne = new THREE.JSONLoader();
-            loader_suzanne.load( 'threejs/Tongue10.js', function ( geometry ) {
-                modelLibrary.push({type: 'Suzanne', args: [ ], scale: 100, meshScale:1.5 });
+            loader_suzanne.load( 'threejs/Tongue99.js', function ( geometry ) {
+                modelLibrary.push({type: 'Suzanne', args: [ ], meshScale:1.5 });
                 THREE.Suzanne = function() {
                     return geometry.clone();
                 };
